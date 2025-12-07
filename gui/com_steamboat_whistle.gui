@@ -1,0 +1,133 @@
+widget = {
+	name = "com_steamboat_whistle"
+	size { 100% 100% }
+	layer = layer_ingame_menu
+	visible = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
+
+	widget = {
+		parentanchor = top|hcenter
+		size = { 100% 100% }
+		using = clickthrough_blocker
+		visible = "[GetVariableSystem.HasValue('com_open_window', 'com_steamboat_whistle_button_sgui')]"
+		datacontext = "[GetPlayer]"
+
+		state = {
+			name = _show
+			start_sound = {
+				soundeffect = "event:/SFX/v3_steamboat_whistle/v3_steamboat_whistle"
+			}
+			start_sound = {
+				soundeffect = "snapshot:/Dynamic/mute_world_80"
+			}
+			start_sound = {
+				soundeffect = "snapshot:/Dynamic/mute_vfx_war_100"
+			}
+			on_finish = "[GetVariableSystem.Set('com_fullscreen', 'com_fullscreen')]"
+			# Close open panel before showing this one
+			on_start = "[InformationPanelBar.ClosePanel]"
+			on_start = "[MapListPanelManager.CloseCurrentPanel]"
+		}
+
+		state = {
+			name = _hide
+			on_finish = "[GetVariableSystem.Clear('com_fullscreen')]"
+		}
+
+		background = {
+			texture = "gfx/interface/event_window/event_inner_frame_fullscreen_horizontal.dds"
+		}
+
+		button_icon_round = {
+			parentanchor = center
+			size = { 110 110 }
+			onclick = "[GetVariableSystem.Clear('com_open_window')]"
+			blockoverride "icon" {
+				texture = "gfx/interface/buttons/button_icons/reset.dds"
+			}
+			blockoverride "icon_size" {
+				size = { 5% 5% }
+			}
+		}
+
+		icon = {
+			parentanchor = center
+			size = { 120 120 }
+			texture = "gfx/interface/backgrounds/round_frame_dec.dds"
+
+			using = rotate_glow_overlay_blue
+
+			icon = {
+				parentanchor = center
+				size = { 120 120 }
+				texture = "gfx/interface/icons/goods_icons/steamers.dds"
+
+				state = {
+					trigger_on_create = yes
+					name = 1
+					next = 2
+
+					duration = 0.25
+					using = Animation_Curve_Default
+					position = { 0 10 }
+				}
+				state = {
+					trigger_on_create = yes
+					name = 2
+					next = 3
+
+					duration = 0.25
+					using = Animation_Curve_Default
+					position = { -10 10 }
+				}
+				state = {
+					name = 3
+					next = 4
+
+					duration = 0.25
+					using = Animation_Curve_Default
+					position = { 10 0 }
+				}
+				state = {
+					name = 4
+					next = 5
+
+					duration = 0.25
+					using = Animation_Curve_Default
+					position = { -10 -10 }
+				}
+				state = {
+					name = 5
+					next = 6
+
+					duration = 0.25
+					using = Animation_Curve_Default
+					position = { 10 10 }
+				}
+				state = {
+					name = 6
+					next = 7
+
+					duration = 0.25
+					using = Animation_Curve_Default
+					position = { 10 -10 }
+				}
+				state = {
+					name = 7
+					next = 8
+
+					duration = 0.25
+					using = Animation_Curve_Default
+					position = { -10 0 }
+				}
+				state = {
+					name = 8
+					next = 1
+
+					duration = 0.25
+					using = Animation_Curve_Default
+					position = { 0 -10 }
+				}
+			}
+		}
+	}
+}

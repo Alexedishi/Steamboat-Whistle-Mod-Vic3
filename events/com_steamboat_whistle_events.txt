@@ -1,0 +1,14 @@
+﻿namespace = com_steamboat_whistle
+
+com_steamboat_whistle.1 = {
+	type = country_event
+	hidden = yes
+	orphan = yes
+
+	trigger = {
+		# DO NOT CALL THIS EVENT
+	}
+	immediate = {
+		fix_variable_error = { variable = com_steamboat_whistle_button_sgui }
+	}
+}

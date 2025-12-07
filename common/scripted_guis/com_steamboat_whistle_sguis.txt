@@ -1,0 +1,11 @@
+﻿com_steamboat_whistle_button_sgui = { # Toggle Debug Sidebar SGUI
+	scope = country
+	is_shown = {
+		always = yes
+	}
+	is_valid = {
+		always = yes
+	}
+	effect = {
+	}
+}

@@ -1,0 +1,6 @@
+﻿GLOBAL = {
+	add_to_global_variable_list = {
+		name = custom_button_list_flag
+		target = flag:com_steamboat_whistle_button_sgui
+	}
+}
