@@ -1,0 +1,3 @@
+com_error_spudgun = {
+	icon = gfx/interface/error_spudgun.dds
+}

@@ -1,3 +1,5 @@
 ﻿l_english:
  com_steamboat_whistle_button_sgui: "com_steamboat_whistle_button_sgui"
  com_steamboat_whistle_button_sgui_desc: "Steamboat Whistle"
+ com_error_spudgun: "Spudgun"
+ com_error_spudgun_desc: "#bold #italic We have [ErrorDeer.NumberOrErrors|v] Error(s). Why didn’t they just make Victoria 2, 2?#!#!"
